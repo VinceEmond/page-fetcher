@@ -133,35 +133,3 @@ conn.on('connect', ()=> {
  
 
 
-// You need to make an http request and wait for the response.
-
-
-
-
-// print out a message like:
-// Downloaded and saved 1235 bytes to ./index.html.
-
-
-
-
-// After the http request is complete,
-// you need to take the data you receive and write it to a file in your local filesystem.
-
-
-
-
-
-
-// WRITING TO FILE
-
-/*
-const content = 'Some content!';
-
-fs.writeFile('/Users/joe/test.txt', content, err => {
-  if (err) {
-    console.error(err);
-    return;
-  }
-  //file written successfully
-});
- */
