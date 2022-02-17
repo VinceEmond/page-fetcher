@@ -13,11 +13,18 @@ const localPath = args[1];
 request(`${URL}`, (error, response, body) => {
   let page = {error, response, body};
 
+  if (error) {
+    console.log("Error, invalid URL!\n", error);
+    process.exit();
+  }
+  // console.log("error", error);
+
   fs.writeFile(`${localPath}`, page.body,(error) => {
     const fileSize = page.body.length;
     if (error) {
-      console.log(`File write error!`);
-      return;
+      console.log(`File write error!`, error);
+      process.exit();
+      // return;
     }
     console.log(`Downloaded and saved ${fileSize} bytes to ${localPath}.`);
   
